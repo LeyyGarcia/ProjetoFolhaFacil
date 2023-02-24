@@ -1,0 +1,35 @@
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.Border;
+
+public class Main {
+
+
+    private static void createAndShowGUI() {
+        Color blueblue = new Color(227,235,238);
+        JFrame jFrame = new JFrame("Hello World Swing Example");
+        jFrame.setLayout(new FlowLayout());
+        jFrame.setSize(1086, 680);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.getContentPane().setBackground(blueblue);
+
+
+
+        JLabel label = new JLabel("Hello World Swing");
+        Border border = BorderFactory.createLineBorder(Color.BLACK);
+        label.setBorder(border);
+        label.setPreferredSize(new Dimension(150, 100));
+        label.setForeground(Color.BLUE);
+
+        label.setText("Hello World Swing");
+        label.setHorizontalAlignment(JLabel.CENTER);
+
+
+        jFrame.add(label);
+        jFrame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        createAndShowGUI();
+    }
+}
