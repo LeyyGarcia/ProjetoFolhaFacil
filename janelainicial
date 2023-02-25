@@ -2,9 +2,13 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-public class Main {
+public class Main 
+{
 
-    private static void createAndShowGUI() {
+    private static void createAndShowGUI() 
+    {
+        // ACALME-SE LE
+        // Respira fundo
         Color blueblue = new Color(227, 235, 238);
         Color botao = new Color (94,119,255);
         JFrame jFrame = new JFrame("Hello World Swing Example");
@@ -67,7 +71,8 @@ public class Main {
         jFrame.setVisible(true);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         createAndShowGUI();
     }
 }
