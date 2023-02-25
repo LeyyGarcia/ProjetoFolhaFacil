@@ -6,46 +6,70 @@ public class Main {
 
     private static void createAndShowGUI() {
         Color blueblue = new Color(227, 235, 238);
+        Color botao = new Color (94,119,255);
         JFrame jFrame = new JFrame("Hello World Swing Example");
         jFrame.setLayout(new FlowLayout());
         jFrame.setSize(1086, 680);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.getContentPane().setBackground(blueblue);
-        
-        JButton m1 = new JButton ("Cadastrar funcionário");
-        Container tudo = jFrame.getContentPane();
-        tudo.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        
-        
-        tudo.setLayout(new GridLayout(1,2));
-        tudo.add(label);
-        tudo.add(m1);
+
 
 
         String texto = "História da empresa e do projeto:\n\n"
-        + "Em fevereiro de 2023 um grupo composto de estudantes do Senai Anchieta foi formado com o objetivo de criar um sistema versátil e\n"
-        + "que possibilitasse o cadastro de funcionários, juntamente à funcionalidade de cálculo dos impostos e o custo efetivo daquele ou\n"
-        + "daqueles indivíduos à empresa de forma objetiva. Com a proposta de trazer uma interface amigável e novas utilidades, o sistema foi desenvolvido em Java,\n"
-        + "utilizando a orientação a objetos. O recurso possibilitou a criação do sistema e posteriormente, a implementação de novos recursos úteis aos usuários,\n"
-        + "trazendo um “design” limpo e dados distribuídos de forma simples e objetiva, visando a oferecer maior facilidade e clareza ao usuário final.\n";
+                + "Em fevereiro de 2023 um grupo composto de estudantes do Senai Anchieta foi formado com o objetivo de criar um sistema versátil e\n"
+                + "que possibilitasse o cadastro de funcionários, juntamente à funcionalidade de cálculo dos impostos e o custo efetivo daquele ou\n"
+                + "daqueles indivíduos à empresa de forma objetiva. Com a proposta de trazer uma interface amigável e novas utilidades, o sistema foi desenvolvido em Java,\n"
+                + "utilizando a orientação a objetos. O recurso possibilitou a criação do sistema e posteriormente, a implementação de novos recursos úteis aos usuários,\n"
+                + "trazendo um “design” limpo e dados distribuídos de forma simples e objetiva, visando a oferecer maior facilidade e clareza ao usuário final.\n";
 
         JTextArea TamTexto = new JTextArea(texto);
         JLabel label = new JLabel();
-        Border border = BorderFactory.createLineBorder(Color.BLACK);
-        TamTexto.setBorder(border);
-        TamTexto.setPreferredSize(new Dimension(500, 300));
-        TamTexto.setForeground(Color.BLUE);
+        Border border = BorderFactory.createLineBorder(Color.white);
+        //TamTexto.setBorder(border);
+        TamTexto.setPreferredSize(new Dimension(600, 500));
+        TamTexto.setForeground(Color.black);
         TamTexto.setEditable(false);
         TamTexto.setLineWrap(true);
         TamTexto.setWrapStyleWord(true);
-       // label.setHorizontalAlignment(JLabel.CENTER);
+        TamTexto.setBackground(blueblue);
+        TamTexto.setFont(Font.getFont(Font.SANS_SERIF));
 
-       jFrame.add(TamTexto);
-       //jFrame.add(label);
+
+        JButton m1 = new JButton ("Cadastrar funcionário");
+        JButton m2 = new JButton ("Pagamento");
+        JButton m3 = new JButton ("Relatorio");
+        JButton m4 = new JButton ("Sair");
+        m1.setBackground(botao);
+        m1.setFont(Font.getFont(Font.SANS_SERIF));
+        m1.setForeground(Color.WHITE);
+        m1.setSize(200,100);
+        m2.setBackground(botao);
+        m2.setFont(Font.getFont(Font.SANS_SERIF));
+        m2.setForeground(Color.WHITE);
+        m2.setSize(200,100);
+        m3.setBackground(botao);
+        m3.setFont(Font.getFont(Font.SANS_SERIF));
+        m3.setForeground(Color.WHITE);
+        m3.setSize(200,100);
+        Container tudo = jFrame.getContentPane();
+
+
+
+        tudo.add(m1);
+        tudo.add(m2);
+        tudo.add(m3);
+        tudo.add(m4);
+        tudo.setLayout(new FlowLayout(5));
+
+
+        jFrame.add(TamTexto);
+        //jFrame.add(label);
         jFrame.setVisible(true);
     }
 
     public static void main(String[] args) {
         createAndShowGUI();
     }
+}
+
 }
