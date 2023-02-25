@@ -15,6 +15,10 @@ public class Main {
         JButton m1 = new JButton ("Cadastrar funcionário");
         Container tudo = jFrame.getContentPane();
         tudo.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        
+        
+        tudo.setLayout(new GridLayout(1,2));
+        tudo.add(label);
         tudo.add(m1);
 
 
