@@ -2,22 +2,18 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-public class Main 
-{
+public class Main {
 
-    private static void createAndShowGUI() 
-    {
+    private static void createAndShowGUI() {
         // ACALME-SE LE
         // Respira fundo
-        Color blueblue = new Color(227, 235, 238);
-        Color botao = new Color (94,119,255);
-        JFrame jFrame = new JFrame("Hello World Swing Example");
+        Color azulFundo = new Color(227, 235, 238);
+        Color botao = new Color(94, 119, 255);
+        JFrame jFrame = new JFrame("Calculadora de impostos 2023");
         jFrame.setLayout(new FlowLayout());
         jFrame.setSize(1086, 680);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.getContentPane().setBackground(blueblue);
-
-
+        jFrame.getContentPane().setBackground(azulFundo);
 
         String texto = "História da empresa e do projeto:\n\n"
                 + "Em fevereiro de 2023 um grupo composto de estudantes do Senai Anchieta foi formado com o objetivo de criar um sistema versátil e\n"
@@ -29,52 +25,58 @@ public class Main
         JTextArea TamTexto = new JTextArea(texto);
         JLabel label = new JLabel();
         Border border = BorderFactory.createLineBorder(Color.white);
-        //TamTexto.setBorder(border);
+        // TamTexto.setBorder(border);
         TamTexto.setPreferredSize(new Dimension(600, 500));
         TamTexto.setForeground(Color.black);
         TamTexto.setEditable(false);
         TamTexto.setLineWrap(true);
         TamTexto.setWrapStyleWord(true);
-        TamTexto.setBackground(blueblue);
+        TamTexto.setBackground(azulFundo);
         TamTexto.setFont(Font.getFont(Font.SANS_SERIF));
+        TamTexto.setSelectionColor(Color.lightGray);
+        TamTexto.setSelectedTextColor(Color.darkGray);
 
-
-        JButton m1 = new JButton ("Cadastrar funcionário");
-        JButton m2 = new JButton ("Pagamento");
-        JButton m3 = new JButton ("Relatorio");
-        JButton m4 = new JButton ("Sair");
+        JButton m1 = new JButton("Cadastrar funcionário");
+        JButton m2 = new JButton("Pagamento");
+        JButton m3 = new JButton("Relatorio");
+        JButton m4 = new JButton("Sair");
         m1.setBackground(botao);
         m1.setFont(Font.getFont(Font.SANS_SERIF));
         m1.setForeground(Color.WHITE);
-        m1.setSize(200,100);
+        m1.setSize(200, 100);
         m2.setBackground(botao);
         m2.setFont(Font.getFont(Font.SANS_SERIF));
         m2.setForeground(Color.WHITE);
-        m2.setSize(200,100);
+        m2.setSize(200, 100);
         m3.setBackground(botao);
         m3.setFont(Font.getFont(Font.SANS_SERIF));
         m3.setForeground(Color.WHITE);
-        m3.setSize(200,100);
+        m3.setSize(200, 100);
+        m4.setBackground(botao);
+        m4.setFont(Font.getFont(Font.SANS_SERIF));
+        m4.setForeground(Color.WHITE);
+        m4.setSize(200, 100);
+
+        JPanel centralizaBotoes = new JPanel(new GridLayout(1, 4, 5, 5));
+        centralizaBotoes.add(m1);
+        centralizaBotoes.add(m2);
+        centralizaBotoes.add(m3);
+        centralizaBotoes.add(m4);
+
         Container tudo = jFrame.getContentPane();
+        tudo.add(TamTexto, BorderLayout.NORTH);
+        tudo.add(TamTexto, BorderLayout.CENTER);
+        tudo.add(centralizaBotoes, BorderLayout.SOUTH);
+        tudo.add(centralizaBotoes, BorderLayout.CENTER);
 
-
-
-        tudo.add(m1);
-        tudo.add(m2);
-        tudo.add(m3);
-        tudo.add(m4);
-        tudo.setLayout(new FlowLayout(5));
-
-
-        jFrame.add(TamTexto);
-        //jFrame.add(label);
+        tudo.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 50));
+        jFrame.add(label);
         jFrame.setVisible(true);
+        jFrame.setLocationRelativeTo(null); // CENTRALIZA O JFRAME PARA SER EXIBIDO NO MEIO DA TELA
     }
 
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         createAndShowGUI();
     }
 }
 
-}
