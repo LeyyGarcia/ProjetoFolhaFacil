@@ -11,6 +11,11 @@ public class Main {
         jFrame.setSize(1086, 680);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.getContentPane().setBackground(blueblue);
+        
+        JButton m1 = new JButton ("Cadastrar funcionário");
+        Container tudo = jFrame.getContentPane();
+        tudo.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        tudo.add(m1);
 
 
         String texto = "História da empresa e do projeto:\n\n"
