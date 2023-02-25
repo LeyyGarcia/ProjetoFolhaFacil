@@ -56,6 +56,7 @@ public class Main {
         m4.setFont(Font.getFont(Font.SANS_SERIF));
         m4.setForeground(Color.WHITE);
         m4.setSize(200, 100);
+        m4.addActionListener(new ActionListener(System.exit(0)));
 
         JPanel centralizaBotoes = new JPanel(new GridLayout(1, 4, 5, 5));
         centralizaBotoes.add(m1);
@@ -79,4 +80,3 @@ public class Main {
         createAndShowGUI();
     }
 }
-
