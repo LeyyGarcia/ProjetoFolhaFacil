@@ -17,7 +17,15 @@ public class Main
 
 
 
-        JLabel label = new JLabel("Hello World Swing");
+        JLabel label = new JLabel("""
+                História da empresa e do projeto: 
+                
+                Em fevereiro de 2023 um grupo composto de estudantes do Senai Anchieta foi formado com o objetivo de criar um sistema versátil e 
+                que possibilitasse o cadastro de funcionários, juntamente à funcionalidade de cálculo dos impostos e o custo efetivo daquele ou 
+                daqueles indivíduos à empresa de forma objetiva. Com a proposta de trazer uma interface amigável e novas utilidades, o sistema foi desenvolvido em Java, 
+                utilizando a orientação a objetos. O recurso possibilitou a criação do sistema e posteriormente, a implementação de novos recursos úteis aos usuários, 
+                trazendo um “design” limpo e dados distribuídos de forma simples e objetiva, visando a oferecer maior facilidade e clareza ao usuário final.
+                                                                      """);
         Border border = BorderFactory.createLineBorder(Color.BLACK);
         label.setBorder(border);
         label.setPreferredSize(new Dimension(150, 100));
