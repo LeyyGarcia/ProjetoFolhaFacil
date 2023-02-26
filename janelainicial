@@ -96,7 +96,9 @@ public class Main {
         tudo.add(botoesesquerda);
         tudo.add(painelprincipal);
 
-        tudo.setLayout(new FlowLayout(FlowLayout.CENTER, 2, 2));
+
+        //botoesesquerda.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 1));
+        //painelprincipal.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 2));
         jFrame.add(label);
         jFrame.setVisible(true);
         jFrame.setLocationRelativeTo(null); // CENTRALIZA O JFRAME PARA SER EXIBIDO NO MEIO DA TELA
