@@ -28,7 +28,7 @@ public class Main {
                 + "utilizando a orientação a objetos. O recurso possibilitou a criação do sistema e posteriormente, a implementação de novos recursos úteis aos usuários,\n"
                 + "trazendo um “design” limpo e dados distribuídos de forma simples e objetiva, visando a oferecer maior facilidade e clareza ao usuário final.\n";
 
-        String TpaginaUm = "               Página Inicial               ";
+        String TpaginaUm = "               Página Inicial:               ";
 
         JTextArea HistoriaProj = new JTextArea(texto);
         JLabel label = new JLabel();
@@ -44,7 +44,7 @@ public class Main {
         HistoriaProj.setSelectedTextColor(Color.darkGray);
 
         JTextArea TitulopaginaUm = new JTextArea(TpaginaUm);
-        JLabel LabTpaginaUm = new JLabel();
+        //JLabel LabTpaginaUm = new JLabel(" Página Inicial: ");
         TitulopaginaUm.setForeground(Color.black);
         TitulopaginaUm.setEditable(false);
         TitulopaginaUm.setLineWrap(true);
@@ -54,25 +54,25 @@ public class Main {
         TitulopaginaUm.setSelectionColor(Color.lightGray);
         TitulopaginaUm.setSelectedTextColor(Color.darkGray);
 
-        JButton Botao1Cad = new JButton("Cadastrar funcionário");
-        JButton Botao2Pag = new JButton("Pagamento");
-        JButton Botao3Rel = new JButton("Relatorio");
+        JButton Botao1Cadastro = new JButton("Cadastrar funcionário");
+        JButton Botao2Pagamento = new JButton("Pagamento");
+        JButton Botao3Relatorio = new JButton("Relatorio");
         JButton Botao4Sair = new JButton("Sair");
 
-        Botao1Cad.setBackground(botao);
-        Botao1Cad.setFont(Font.getFont(Font.SANS_SERIF));
-        Botao1Cad.setForeground(Color.WHITE);
-        Botao1Cad.setSize(200, 100);
+        Botao1Cadastro.setBackground(botao);
+        Botao1Cadastro.setFont(Font.getFont(Font.SANS_SERIF));
+        Botao1Cadastro.setForeground(Color.WHITE);
+        Botao1Cadastro.setSize(200, 100);
 
-        Botao2Pag.setBackground(botao);
-        Botao2Pag.setFont(Font.getFont(Font.SANS_SERIF));
-        Botao2Pag.setForeground(Color.WHITE);
-        Botao2Pag.setSize(200, 100);
+        Botao2Pagamento.setBackground(botao);
+        Botao2Pagamento.setFont(Font.getFont(Font.SANS_SERIF));
+        Botao2Pagamento.setForeground(Color.WHITE);
+        Botao2Pagamento.setSize(200, 100);
 
-        Botao3Rel.setBackground(botao);
-        Botao3Rel.setFont(Font.getFont(Font.SANS_SERIF));
-        Botao3Rel.setForeground(Color.WHITE);
-        Botao3Rel.setSize(200, 100);
+        Botao3Relatorio.setBackground(botao);
+        Botao3Relatorio.setFont(Font.getFont(Font.SANS_SERIF));
+        Botao3Relatorio.setForeground(Color.WHITE);
+        Botao3Relatorio.setSize(200, 100);
 
         Botao4Sair.setBackground(botao);
         Botao4Sair.setFont(Font.getFont(Font.SANS_SERIF));
@@ -86,9 +86,9 @@ public class Main {
         JPanel botoesesquerda = new JPanel(new GridLayout(0, 1, 0, 2));
         botoesesquerda.add(TitulopaginaUm, BorderLayout.NORTH);
         botoesesquerda.add(TitulopaginaUm, BorderLayout.CENTER);
-        botoesesquerda.add(Botao1Cad);
-        botoesesquerda.add(Botao2Pag);
-        botoesesquerda.add(Botao3Rel);
+        botoesesquerda.add(Botao1Cadastro);
+        botoesesquerda.add(Botao2Pagamento);
+        botoesesquerda.add(Botao3Relatorio);
         botoesesquerda.add(Botao4Sair, BorderLayout.SOUTH);
         botoesesquerda.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10));
 
