@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.net.URL;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -9,68 +10,93 @@ public class Main {
         // Respira fundo
         Color azulFundo = new Color(227, 235, 238);
         Color botao = new Color(94, 119, 255);
-        JFrame jFrame = new JFrame("Calculadora de impostos 2023");
+        JFrame jFrame = new JFrame("Página Inicial");
         jFrame.setLayout(new FlowLayout());
         jFrame.setSize(1086, 680);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.getContentPane().setBackground(azulFundo);
 
-        String texto = "História da empresa e do projeto:\n\n"
+        // CODIGO PRA MUDAR O ICONE v (NAO ESTA FUNCIONANDO)
+        /* URL url = this.getClass().getResource("/imagens/icon.png");
+        Image imgIcone = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imgIcone); */
+
+        String texto = "                                              História do projeto: \n"
                 + "Em fevereiro de 2023 um grupo composto de estudantes do Senai Anchieta foi formado com o objetivo de criar um sistema versátil e\n"
                 + "que possibilitasse o cadastro de funcionários, juntamente à funcionalidade de cálculo dos impostos e o custo efetivo daquele ou\n"
                 + "daqueles indivíduos à empresa de forma objetiva. Com a proposta de trazer uma interface amigável e novas utilidades, o sistema foi desenvolvido em Java,\n"
                 + "utilizando a orientação a objetos. O recurso possibilitou a criação do sistema e posteriormente, a implementação de novos recursos úteis aos usuários,\n"
                 + "trazendo um “design” limpo e dados distribuídos de forma simples e objetiva, visando a oferecer maior facilidade e clareza ao usuário final.\n";
 
-        JTextArea TamTexto = new JTextArea(texto);
+        String TpaginaUm = "               Página Inicial               ";
+
+        JTextArea HistoriaProj = new JTextArea(texto);
         JLabel label = new JLabel();
         Border border = BorderFactory.createLineBorder(Color.white);
-        // TamTexto.setBorder(border);
-        TamTexto.setPreferredSize(new Dimension(600, 500));
-        TamTexto.setForeground(Color.black);
-        TamTexto.setEditable(false);
-        TamTexto.setLineWrap(true);
-        TamTexto.setWrapStyleWord(true);
-        TamTexto.setBackground(azulFundo);
-        TamTexto.setFont(Font.getFont(Font.SANS_SERIF));
-        TamTexto.setSelectionColor(Color.lightGray);
-        TamTexto.setSelectedTextColor(Color.darkGray);
+        HistoriaProj.setPreferredSize(new Dimension(400, 300));
+        HistoriaProj.setForeground(Color.black);
+        HistoriaProj.setEditable(false);
+        HistoriaProj.setLineWrap(true);
+        HistoriaProj.setWrapStyleWord(true);
+        HistoriaProj.setBackground(azulFundo);
+        HistoriaProj.setFont(Font.getFont(Font.SANS_SERIF));
+        HistoriaProj.setSelectionColor(Color.lightGray);
+        HistoriaProj.setSelectedTextColor(Color.darkGray);
 
-        JButton m1 = new JButton("Cadastrar funcionário");
-        JButton m2 = new JButton("Pagamento");
-        JButton m3 = new JButton("Relatorio");
-        JButton m4 = new JButton("Sair");
-        m1.setBackground(botao);
-        m1.setFont(Font.getFont(Font.SANS_SERIF));
-        m1.setForeground(Color.WHITE);
-        m1.setSize(200, 100);
-        m2.setBackground(botao);
-        m2.setFont(Font.getFont(Font.SANS_SERIF));
-        m2.setForeground(Color.WHITE);
-        m2.setSize(200, 100);
-        m3.setBackground(botao);
-        m3.setFont(Font.getFont(Font.SANS_SERIF));
-        m3.setForeground(Color.WHITE);
-        m3.setSize(200, 100);
-        m4.setBackground(botao);
-        m4.setFont(Font.getFont(Font.SANS_SERIF));
-        m4.setForeground(Color.WHITE);
-        m4.setSize(200, 100);
-        m4.addActionListener(new ActionListener(System.exit(0)));
+        JTextArea TitulopaginaUm = new JTextArea(TpaginaUm);
+        JLabel LabTpaginaUm = new JLabel();
+        TitulopaginaUm.setForeground(Color.black);
+        TitulopaginaUm.setEditable(false);
+        TitulopaginaUm.setLineWrap(true);
+        TitulopaginaUm.setWrapStyleWord(true);
+        TitulopaginaUm.setBackground(azulFundo);
+        TitulopaginaUm.setFont(Font.getFont(Font.SANS_SERIF));
+        TitulopaginaUm.setSelectionColor(Color.lightGray);
+        TitulopaginaUm.setSelectedTextColor(Color.darkGray);
 
-        JPanel centralizaBotoes = new JPanel(new GridLayout(1, 4, 5, 5));
-        centralizaBotoes.add(m1);
-        centralizaBotoes.add(m2);
-        centralizaBotoes.add(m3);
-        centralizaBotoes.add(m4);
+        JButton Botao1Cad = new JButton("Cadastrar funcionário");
+        JButton Botao2Pag = new JButton("Pagamento");
+        JButton Botao3Rel = new JButton("Relatorio");
+        JButton Botao4Sair = new JButton("Sair");
+
+        Botao1Cad.setBackground(botao);
+        Botao1Cad.setFont(Font.getFont(Font.SANS_SERIF));
+        Botao1Cad.setForeground(Color.WHITE);
+        Botao1Cad.setSize(200, 100);
+
+        Botao2Pag.setBackground(botao);
+        Botao2Pag.setFont(Font.getFont(Font.SANS_SERIF));
+        Botao2Pag.setForeground(Color.WHITE);
+        Botao2Pag.setSize(200, 100);
+
+        Botao3Rel.setBackground(botao);
+        Botao3Rel.setFont(Font.getFont(Font.SANS_SERIF));
+        Botao3Rel.setForeground(Color.WHITE);
+        Botao3Rel.setSize(200, 100);
+
+        Botao4Sair.setBackground(botao);
+        Botao4Sair.setFont(Font.getFont(Font.SANS_SERIF));
+        Botao4Sair.setForeground(Color.WHITE);
+        Botao4Sair.setSize(200, 100);
+
+
+        JPanel painelprincipal = new JPanel((new GridLayout(0, 1, 1, 1)));
+        painelprincipal.add(HistoriaProj, BorderLayout.NORTH);
+
+        JPanel botoesesquerda = new JPanel(new GridLayout(0, 1, 0, 2));
+        botoesesquerda.add(TitulopaginaUm, BorderLayout.NORTH);
+        botoesesquerda.add(TitulopaginaUm, BorderLayout.CENTER);
+        botoesesquerda.add(Botao1Cad);
+        botoesesquerda.add(Botao2Pag);
+        botoesesquerda.add(Botao3Rel);
+        botoesesquerda.add(Botao4Sair, BorderLayout.SOUTH);
+        botoesesquerda.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10));
 
         Container tudo = jFrame.getContentPane();
-        tudo.add(TamTexto, BorderLayout.NORTH);
-        tudo.add(TamTexto, BorderLayout.CENTER);
-        tudo.add(centralizaBotoes, BorderLayout.SOUTH);
-        tudo.add(centralizaBotoes, BorderLayout.CENTER);
+        tudo.add(botoesesquerda);
+        tudo.add(painelprincipal);
 
-        tudo.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 50));
+        tudo.setLayout(new FlowLayout(FlowLayout.CENTER, 2, 2));
         jFrame.add(label);
         jFrame.setVisible(true);
         jFrame.setLocationRelativeTo(null); // CENTRALIZA O JFRAME PARA SER EXIBIDO NO MEIO DA TELA
