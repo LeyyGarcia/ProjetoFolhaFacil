@@ -21,6 +21,23 @@ public class Main
         JTextField telefone = new JTextField ("Telefone",10);
         JTextField email = new JTextField ("Email",20);
 
+        JTextField logradouro = new JTextField ("Logradouro",20);
+        JTextField numdacasa = new JTextField ("Numero da casa",5);
+        JTextField complemento = new JTextField ("Complemento",10);
+        JTextField bairro = new JTextField ("Bairro",20);
+        JTextField CEP = new JTextField ("CEP",10);
+        JTextField estado = new JTextField ("Estado",20);
+        JTextField pais = new JTextField ("Pais",10);
+        JTextField uf = new JTextField ("UF",5);
+
+        JTextField agencia = new JTextField ("Agencia",20);
+        JTextField conta = new JTextField ("Conta",10);
+        JTextField tipo = new JTextField ("Tipo",10);
+        JTextField salario = new JTextField ("Salario",10);
+        JTextField cargo = new JTextField ("Cargo",20);
+        JTextField dtinicio = new JTextField ("Data de Inicio __/__/__",20);
+        JTextField dtpag = new JTextField ("Data de Inicio __/__/__ ",20);
+
         public Cadastro() {
 
             JFrame jFrame = new JFrame("Cadastro");
@@ -28,7 +45,7 @@ public class Main
             jFrame.setSize(1086, 680);
             jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             jFrame.getContentPane().setBackground(azulFundo);
-            
+
 
 
             Container dadoscadastrais = this.getContentPane();
@@ -37,26 +54,22 @@ public class Main
             dadoscadastrais.add(datadenasc);dadoscadastrais.add(genero);dadoscadastrais.add(telefone);
             dadoscadastrais.add(email);
 
-            this.setSize(650,50);
+            Container enderecos = this.getContentPane();
+            enderecos.add(logradouro);enderecos.add(numdacasa);enderecos.add(complemento);
+            enderecos.add(bairro);enderecos.add(CEP); enderecos.add(estado);enderecos.add(uf);enderecos.add(pais);
+
+            Container dadosbanco = this.getContentPane();
+            dadosbanco.add(agencia);dadosbanco.add(conta);dadosbanco.add(tipo);dadosbanco.add(salario);dadosbanco.add(cargo);
+            dadosbanco.add(dtinicio);dadosbanco.add(dtpag);
+
+
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            this.setSize(1086,700);
             this.setVisible(true);
-            jFrame.setVisible(true);
+
         }
 
-        /*JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");
-        JTextField nome = new JTextField ("Nome");*/
+
 
 
 
