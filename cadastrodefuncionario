@@ -1,1 +1,72 @@
+import java.awt.*;
+import java.net.URL;
+import javax.swing.*;
+import javax.swing.border.Border;
 
+public class Main
+{
+    public static class Cadastro extends JFrame {
+
+        Color azulFundo = new Color(227, 235, 238);
+        Color botao = new Color(94, 119, 255);
+
+
+
+
+        JTextField nome = new JTextField ("Nome",20);
+        JTextField cpf = new JTextField ("CPF",20);
+        JTextField rg = new JTextField ("RG",10);
+        JTextField datadenasc = new JTextField ("Data de Nascimento __/__/__ ",20);
+        JTextField genero = new JTextField ("Genero",20);
+        JTextField telefone = new JTextField ("Telefone",10);
+        JTextField email = new JTextField ("Email",20);
+
+        public Cadastro() {
+
+            JFrame jFrame = new JFrame("Cadastro");
+            jFrame.setLayout(new FlowLayout());
+            jFrame.setSize(1086, 680);
+            jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            jFrame.getContentPane().setBackground(azulFundo);
+            
+
+
+            Container dadoscadastrais = this.getContentPane();
+            dadoscadastrais.setLayout(new FlowLayout(FlowLayout.LEFT));
+            dadoscadastrais.add(nome);dadoscadastrais.add(cpf); dadoscadastrais.add(rg);
+            dadoscadastrais.add(datadenasc);dadoscadastrais.add(genero);dadoscadastrais.add(telefone);
+            dadoscadastrais.add(email);
+
+            this.setSize(650,50);
+            this.setVisible(true);
+            jFrame.setVisible(true);
+        }
+
+        /*JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");
+        JTextField nome = new JTextField ("Nome");*/
+
+
+
+
+
+    }
+
+
+    public static void main(String[] args)
+    {
+        Cadastro cc = new Cadastro();
+    }
+}
