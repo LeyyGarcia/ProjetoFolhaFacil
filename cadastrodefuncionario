@@ -68,6 +68,13 @@ public class Main
             dadoscadastrais.add(nome);dadoscadastrais.add(cpf); dadoscadastrais.add(rg);
             dadoscadastrais.add(datadenasc);dadoscadastrais.add(genero);dadoscadastrais.add(telefone);
             dadoscadastrais.add(email);
+            
+            String cc = "Convênio:";
+            JTextArea ccc = new JTextArea(cc);
+            ccc.setForeground(Color.black);
+            ccc.setBackground(azulFundo);
+            ccc.setFont(new Font("Courier", Font.ITALIC,13));
+            setPreferredSize(new Dimension(12, 12));
 
             Container checkboxx =this.getContentPane();
             checkboxx.add(conveniom); checkboxx.add(convenioo);
