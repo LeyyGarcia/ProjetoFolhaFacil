@@ -22,7 +22,7 @@ public class Main
         JTextField email = new JTextField ("Email",20);
 
         JTextField logradouro = new JTextField ("Logradouro",20);
-        JTextField numdacasa = new JTextField ("Numero da casa",5);
+        JTextField numdacasa = new JTextField ("Nº",5);
         JTextField complemento = new JTextField ("Complemento",10);
         JTextField bairro = new JTextField ("Bairro",20);
         JTextField CEP = new JTextField ("CEP",10);
@@ -38,6 +38,9 @@ public class Main
         JTextField dtinicio = new JTextField ("Data de Inicio __/__/__",20);
         JTextField dtpag = new JTextField ("Data de Inicio __/__/__ ",20);
 
+        JCheckBox conveniom = new JCheckBox ("Médico");
+        JCheckBox convenioo = new JCheckBox ("Odontologico");
+
         public Cadastro() {
 
             JFrame jFrame = new JFrame("Cadastro");
@@ -46,24 +49,68 @@ public class Main
             jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             jFrame.getContentPane().setBackground(azulFundo);
 
+            String tdados = "DADOS CADASTRAIS";
 
+            JTextArea tdadosexibir = new JTextArea(tdados);
+            tdadosexibir.setForeground(Color.black);
+            tdadosexibir.setPreferredSize(new Dimension(1086, 50));
+            tdadosexibir.setEditable(false);
+            tdadosexibir.setLineWrap(true);
+            tdadosexibir.setWrapStyleWord(true);
+            tdadosexibir.setBackground(azulFundo);
+            tdadosexibir.setFont(new Font("Courier", Font.ITALIC,20));
+            tdadosexibir.setSelectionColor(Color.lightGray);
+            tdadosexibir.setSelectedTextColor(Color.darkGray);
 
             Container dadoscadastrais = this.getContentPane();
             dadoscadastrais.setLayout(new FlowLayout(FlowLayout.LEFT));
+            dadoscadastrais.add(tdadosexibir);
             dadoscadastrais.add(nome);dadoscadastrais.add(cpf); dadoscadastrais.add(rg);
             dadoscadastrais.add(datadenasc);dadoscadastrais.add(genero);dadoscadastrais.add(telefone);
             dadoscadastrais.add(email);
 
+            Container checkboxx =this.getContentPane();
+            checkboxx.add(conveniom); checkboxx.add(convenioo);
+
+            String tendereco = "ENDEREÇO";
+
+            JTextArea tenderecoexibir = new JTextArea(tendereco);
+            tenderecoexibir.setForeground(Color.black);
+            tenderecoexibir.setPreferredSize(new Dimension(1086, 50));
+            tenderecoexibir.setEditable(false);
+            tenderecoexibir.setLineWrap(true);
+            tenderecoexibir.setWrapStyleWord(true);
+            tenderecoexibir.setBackground(azulFundo);
+            tenderecoexibir.setFont(new Font("Courier", Font.ITALIC,20));
+            tenderecoexibir.setSelectionColor(Color.lightGray);
+            tenderecoexibir.setSelectedTextColor(Color.darkGray);
+
+
             Container enderecos = this.getContentPane();
+            enderecos.add(tenderecoexibir);
             enderecos.add(logradouro);enderecos.add(numdacasa);enderecos.add(complemento);
             enderecos.add(bairro);enderecos.add(CEP); enderecos.add(estado);enderecos.add(uf);enderecos.add(pais);
 
+            String tbanco = "DADOS BANCÁRIOS";
+
+            JTextArea tbancoexibir = new JTextArea(tbanco);
+            tbancoexibir.setForeground(Color.black);
+            tbancoexibir.setPreferredSize(new Dimension(1086, 50));
+            tbancoexibir.setEditable(false);
+            tbancoexibir.setLineWrap(true);
+            tbancoexibir.setWrapStyleWord(true);
+            tbancoexibir.setBackground(azulFundo);
+            tbancoexibir.setFont(new Font("Courier", Font.ITALIC,20));
+            tbancoexibir.setSelectionColor(Color.lightGray);
+            tbancoexibir.setSelectedTextColor(Color.darkGray);
+
             Container dadosbanco = this.getContentPane();
+            dadosbanco.add(tbancoexibir);
             dadosbanco.add(agencia);dadosbanco.add(conta);dadosbanco.add(tipo);dadosbanco.add(salario);dadosbanco.add(cargo);
             dadosbanco.add(dtinicio);dadosbanco.add(dtpag);
 
 
-            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setSize(1086,700);
             this.setVisible(true);
 
