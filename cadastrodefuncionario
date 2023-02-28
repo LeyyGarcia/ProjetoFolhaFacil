@@ -14,6 +14,7 @@ public class Main
 
 
         JTextField nome = new JTextField ("Nome",20);
+
         JTextField cpf = new JTextField ("CPF",20);
         JTextField rg = new JTextField ("RG",10);
         JTextField datadenasc = new JTextField ("Data de Nascimento __/__/__ ",20);
@@ -36,10 +37,14 @@ public class Main
         JTextField salario = new JTextField ("Salario",10);
         JTextField cargo = new JTextField ("Cargo",20);
         JTextField dtinicio = new JTextField ("Data de Inicio __/__/__",20);
-        JTextField dtpag = new JTextField ("Data de Inicio __/__/__ ",20);
+        JTextField dtpag = new JTextField ("Data de Pagamento __/__/__ ",20);
 
         JCheckBox conveniom = new JCheckBox ("Médico");
         JCheckBox convenioo = new JCheckBox ("Odontologico");
+
+        JButton confirmar = new JButton("Confirmar");
+
+        JButton cancelar = new JButton("Cancelar");
 
         public Cadastro() {
 
@@ -48,11 +53,57 @@ public class Main
             jFrame.setSize(1086, 680);
             jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             jFrame.getContentPane().setBackground(azulFundo);
+            jFrame.setLocationRelativeTo(null);
+
+
+
+
+
+
+            nome.setPreferredSize( new Dimension( 200, 30 ) );
+            cpf.setPreferredSize( new Dimension( 200, 30 ) );
+            rg.setPreferredSize( new Dimension( 200, 30 ) );
+            datadenasc.setPreferredSize( new Dimension( 200, 30 ) );
+            genero.setPreferredSize( new Dimension( 200, 30 ) );
+            telefone.setPreferredSize( new Dimension( 200, 30 ) );
+            email.setPreferredSize( new Dimension( 200, 30) );
+
+
+            logradouro.setPreferredSize( new Dimension( 200, 30 ) );
+            numdacasa.setPreferredSize( new Dimension( 200, 30 ) );
+            complemento.setPreferredSize( new Dimension( 200, 30 ) );
+            bairro.setPreferredSize( new Dimension( 200, 30 ) );
+            CEP.setPreferredSize( new Dimension( 200, 30 ) );
+            estado.setPreferredSize( new Dimension( 200, 30 ) );
+            uf.setPreferredSize( new Dimension( 200, 30 ) );
+            pais.setPreferredSize( new Dimension( 200, 30) );
+
+            agencia.setPreferredSize( new Dimension( 200, 30 ) );
+            tipo.setPreferredSize( new Dimension( 200, 30 ) );
+            conta.setPreferredSize( new Dimension( 200, 30 ) );
+            salario.setPreferredSize( new Dimension( 200, 30 ) );
+            cargo.setPreferredSize( new Dimension( 200, 30 ) );
+            dtinicio.setPreferredSize( new Dimension( 200, 30 ) );
+            dtpag.setPreferredSize( new Dimension( 200, 30 ) );
+
+
+            confirmar.setBackground(botao);
+
+            confirmar.setFont(Font.getFont(Font.SANS_SERIF));
+            confirmar.setForeground(Color.WHITE);
+            confirmar.setSize(500, 400);
+
+
+            cancelar.setBackground(botao);
+            cancelar.setFont(Font.getFont(Font.SANS_SERIF));
+            cancelar.setForeground(Color.WHITE);
+            cancelar.setSize(500, 400);
+
 
             String tdados = "DADOS CADASTRAIS";
 
             JTextArea tdadosexibir = new JTextArea(tdados);
-            tdadosexibir.setForeground(Color.black);
+            tdadosexibir.setForeground(botao);
             tdadosexibir.setPreferredSize(new Dimension(1086, 50));
             tdadosexibir.setEditable(false);
             tdadosexibir.setLineWrap(true);
@@ -64,25 +115,28 @@ public class Main
 
             Container dadoscadastrais = this.getContentPane();
             dadoscadastrais.setLayout(new FlowLayout(FlowLayout.LEFT));
+            //dadoscadastrais.setPreferredSize( new Dimension( 200, 24 ) );
             dadoscadastrais.add(tdadosexibir);
             dadoscadastrais.add(nome);dadoscadastrais.add(cpf); dadoscadastrais.add(rg);
             dadoscadastrais.add(datadenasc);dadoscadastrais.add(genero);dadoscadastrais.add(telefone);
             dadoscadastrais.add(email);
-            
+
             String cc = "Convênio:";
             JTextArea ccc = new JTextArea(cc);
             ccc.setForeground(Color.black);
-            ccc.setBackground(azulFundo);
+            ccc.setBackground(Color.white);
             ccc.setFont(new Font("Courier", Font.ITALIC,13));
             setPreferredSize(new Dimension(12, 12));
 
             Container checkboxx =this.getContentPane();
+            checkboxx.setBackground(Color.white);
+            checkboxx.add(ccc);
             checkboxx.add(conveniom); checkboxx.add(convenioo);
 
             String tendereco = "ENDEREÇO";
 
             JTextArea tenderecoexibir = new JTextArea(tendereco);
-            tenderecoexibir.setForeground(Color.black);
+            tenderecoexibir.setForeground(botao);
             tenderecoexibir.setPreferredSize(new Dimension(1086, 50));
             tenderecoexibir.setEditable(false);
             tenderecoexibir.setLineWrap(true);
@@ -101,7 +155,7 @@ public class Main
             String tbanco = "DADOS BANCÁRIOS";
 
             JTextArea tbancoexibir = new JTextArea(tbanco);
-            tbancoexibir.setForeground(Color.black);
+            tbancoexibir.setForeground(botao);
             tbancoexibir.setPreferredSize(new Dimension(1086, 50));
             tbancoexibir.setEditable(false);
             tbancoexibir.setLineWrap(true);
@@ -116,10 +170,42 @@ public class Main
             dadosbanco.add(agencia);dadosbanco.add(conta);dadosbanco.add(tipo);dadosbanco.add(salario);dadosbanco.add(cargo);
             dadosbanco.add(dtinicio);dadosbanco.add(dtpag);
 
+            String linha = "  ";
 
-            //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JTextArea vazio = new JTextArea(linha);
+            vazio.setForeground(Color.black);
+            vazio.setPreferredSize(new Dimension(1086, 50));
+            vazio.setEditable(false);
+            vazio.setLineWrap(true);
+            vazio.setWrapStyleWord(true);
+            vazio.setBackground(Color.white);
+            vazio.setFont(new Font("Courier", Font.ITALIC,20));
+            vazio.setSelectionColor(Color.lightGray);
+            vazio.setSelectedTextColor(Color.darkGray);
+
+            String vv = "  ";
+
+            JTextArea vvv = new JTextArea(vv);
+            vvv.setForeground(Color.black);
+            vvv.setPreferredSize(new Dimension(400, 400));
+            vvv.setEditable(false);
+            vvv.setLineWrap(true);
+            vvv.setWrapStyleWord(true);
+            vvv.setBackground(Color.white);
+
+            Container botoes = this.getContentPane();
+            botoes.add(vazio);
+            botoes.add(vvv);
+            botoes.add(confirmar);
+            botoes.add(cancelar);
+
+
+
+
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setSize(1086,700);
             this.setVisible(true);
+            this.setResizable(false);
 
         }
 
@@ -135,5 +221,6 @@ public class Main
     public static void main(String[] args)
     {
         Cadastro cc = new Cadastro();
+
     }
 }
