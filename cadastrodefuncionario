@@ -32,6 +32,7 @@ public class Main
         JTextField uf = new JTextField ("UF",5);
 
         JTextField agencia = new JTextField ("Agencia",20);
+
         JTextField conta = new JTextField ("Conta",10);
         JTextField tipo = new JTextField ("Tipo",10);
         JTextField salario = new JTextField ("Salario",10);
@@ -46,6 +47,8 @@ public class Main
 
         JButton cancelar = new JButton("Cancelar");
 
+        JButton voltar = new JButton("Voltar");
+
         public Cadastro() {
 
             JFrame jFrame = new JFrame("Cadastro");
@@ -53,10 +56,14 @@ public class Main
             jFrame.setSize(1086, 680);
             jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             jFrame.getContentPane().setBackground(azulFundo);
-            jFrame.setLocationRelativeTo(null);
 
 
 
+
+            voltar.setBackground(botao);
+            voltar.setFont(Font.getFont(Font.SANS_SERIF));
+            voltar.setForeground(Color.WHITE);
+            voltar.setSize(500, 400);
 
 
 
@@ -100,6 +107,20 @@ public class Main
             cancelar.setSize(500, 400);
 
 
+            String linha = "  ";
+
+            JTextArea vazio = new JTextArea(linha);
+            vazio.setForeground(Color.black);
+            vazio.setPreferredSize(new Dimension(1086, 20));
+            vazio.setEditable(false);
+            vazio.setLineWrap(true);
+            vazio.setWrapStyleWord(true);
+            vazio.setBackground(Color.white);
+            vazio.setFont(new Font("Courier", Font.ITALIC,20));
+            vazio.setSelectionColor(Color.lightGray);
+            vazio.setSelectedTextColor(Color.darkGray);
+
+
             String tdados = "DADOS CADASTRAIS";
 
             JTextArea tdadosexibir = new JTextArea(tdados);
@@ -115,7 +136,7 @@ public class Main
 
             Container dadoscadastrais = this.getContentPane();
             dadoscadastrais.setLayout(new FlowLayout(FlowLayout.LEFT));
-            //dadoscadastrais.setPreferredSize( new Dimension( 200, 24 ) );
+            dadoscadastrais.add(vazio);
             dadoscadastrais.add(tdadosexibir);
             dadoscadastrais.add(nome);dadoscadastrais.add(cpf); dadoscadastrais.add(rg);
             dadoscadastrais.add(datadenasc);dadoscadastrais.add(genero);dadoscadastrais.add(telefone);
@@ -170,18 +191,7 @@ public class Main
             dadosbanco.add(agencia);dadosbanco.add(conta);dadosbanco.add(tipo);dadosbanco.add(salario);dadosbanco.add(cargo);
             dadosbanco.add(dtinicio);dadosbanco.add(dtpag);
 
-            String linha = "  ";
 
-            JTextArea vazio = new JTextArea(linha);
-            vazio.setForeground(Color.black);
-            vazio.setPreferredSize(new Dimension(1086, 50));
-            vazio.setEditable(false);
-            vazio.setLineWrap(true);
-            vazio.setWrapStyleWord(true);
-            vazio.setBackground(Color.white);
-            vazio.setFont(new Font("Courier", Font.ITALIC,20));
-            vazio.setSelectionColor(Color.lightGray);
-            vazio.setSelectedTextColor(Color.darkGray);
 
             String vv = "  ";
 
@@ -196,6 +206,7 @@ public class Main
             Container botoes = this.getContentPane();
             botoes.add(vazio);
             botoes.add(vvv);
+            botoes.add(voltar);
             botoes.add(confirmar);
             botoes.add(cancelar);
 
@@ -206,6 +217,7 @@ public class Main
             this.setSize(1086,700);
             this.setVisible(true);
             this.setResizable(false);
+            this.setLocationRelativeTo(null);
 
         }
 
@@ -221,6 +233,6 @@ public class Main
     public static void main(String[] args)
     {
         Cadastro cc = new Cadastro();
-
+        cc.setTitle("Cadastro de Funcionário");
     }
 }
