@@ -25,27 +25,37 @@ public class Main
         JTextArea t5Area = new JTextArea ("Desconto");
         JTextArea t6Area = new JTextArea ("\n"
                 +"Salário\n"
+                +"\n"
                 +"INSS\n"
+                +"\n"
                 +"IRFF S. Salário\n"
+                +"\n"
                 +"Calculo de hora extra\n");
         JTextArea t7Area = new JTextArea ("\n"
                 +"30d\n"
+                +"\n"
                 +"11,00%\n"
+                +"\n"
                 +"7,50%\n"
+                +"\n"
                 +"12 horas\n");
         //No primeiro campo insira o salario que foi designado para o funcionario e no ultimo o valor ja calculado das horas
         //que o funcionario tem a receber
         JTextArea t8Area = new JTextArea ("\n"
-                +"_____________"
+                +"_____________\n"
                 +"\n"
-                +"\n"+
-                "______________");
+                +"\n"
+                +"\n"
+                +"\n"
+                +"\n"
+                +"______________");
         //Np primeiro campo deve ser armazendado o valor do desconto do inss, e no segundo o valor do desconto do IRFF
         JTextArea t9Area = new JTextArea ("\n"
                 +"\n"
+                +"\n"
                 +"_____________\n"
-                +"_____________\n"
-                +"\n");
+                +"\n"
+                +"_____________\n");
         //Nesse campo, valor liquido deve ficar a quantidade de dinheiro que o funcionario vai receber , ja tendo feito todos os calculos
         JTextArea t10Area = new JTextArea ("\n"
                 +"Vallor líquido:_________");
@@ -58,18 +68,6 @@ public class Main
                 +"Total de descontos:_________");
 
 
-
-        JTextArea n1Area = new JTextArea ();
-        JTextArea n2Area = new JTextArea ();
-        JTextArea n3Area = new JTextArea ();
-        JTextArea n4Area = new JTextArea ();
-        JTextArea n5Area = new JTextArea ();
-        JTextArea n6Area = new JTextArea ();
-        JTextArea n7Area = new JTextArea ();
-        JTextArea n8Area = new JTextArea ();
-        JTextArea n9Area = new JTextArea ();
-        JTextArea n10Area = new JTextArea ();
-        JTextArea n11Area = new JTextArea ();
 
         JTextArea divArea = new JTextArea();
 
@@ -159,56 +157,6 @@ public class Main
             t12Area.setEditable(false);
 
 
-            //segunda exibição
-            n1Area.setPreferredSize( new Dimension( 1086, 60 ) );
-            n1Area.setBackground(azulFundo);
-            n1Area.setEditable(false);
-
-            n2Area.setPreferredSize( new Dimension( 450, 20 ) );
-            n2Area.setBackground(azulFundo);
-            n2Area.setEditable(false);
-
-            n3Area.setPreferredSize( new Dimension( 200, 20 ) );
-            n3Area.setBackground(azulFundo);
-            n3Area.setEditable(false);
-
-            n4Area.setPreferredSize( new Dimension( 200, 20 ) );
-            n4Area.setBackground(azulFundo);
-            n4Area.setEditable(false);
-
-            n5Area.setPreferredSize( new Dimension( 200, 20 ) );
-            n5Area.setBackground(azulFundo);
-            n5Area.setEditable(false);
-
-
-            n6Area.setPreferredSize( new Dimension( 450, 130 ) );
-            n6Area.setBackground(azulFundo);
-            n6Area.setEditable(false);
-
-            n7Area.setPreferredSize( new Dimension( 200, 130 ) );
-            n7Area.setBackground(azulFundo);
-            n7Area.setEditable(false);
-
-            n8Area.setPreferredSize( new Dimension( 200, 130 ) );
-            n8Area.setBackground(azulFundo);
-            n8Area.setEditable(false);
-
-            n9Area.setPreferredSize( new Dimension( 200, 130 ) );
-            n9Area.setBackground(azulFundo);
-            n9Area.setEditable(false);
-
-
-            n10Area.setPreferredSize( new Dimension( 655, 50 ) );
-            n10Area.setBackground(azulFundo);
-            n10Area.setEditable(false);
-
-            n11Area.setPreferredSize( new Dimension( 400, 50 ) );
-            n11Area.setBackground(azulFundo);
-            n11Area.setEditable(false);
-
-
-
-
             voltar.setBackground(botao);
             voltar.setFont(Font.getFont(Font.SANS_SERIF));
             voltar.setForeground(Color.WHITE);
@@ -229,10 +177,6 @@ public class Main
             botoes.add(voltar);botoes.add(vvv);botoes.add(tituloArea);
             botoes.add(cancelar);
 
-
-
-
-
             Container pag = this.getContentPane();
             pag.setLayout(new FlowLayout(FlowLayout.LEFT));
             pag.add(botoes);
@@ -240,12 +184,6 @@ public class Main
             pag.add(t4Area);pag.add(t5Area);pag.add(t6Area);
             pag.add(t7Area);pag.add(t8Area);pag.add(t9Area);
             pag.add(t10Area);pag.add(t11Area);pag.add(t12Area);pag.add(divArea);
-            pag.add(n1Area);pag.add(n2Area);pag.add(n3Area);pag.add(n4Area);
-            pag.add(n5Area);pag.add(n6Area);pag.add(n7Area);pag.add(n8Area);
-            pag.add(n9Area);pag.add(n10Area);pag.add(n11Area);
-
-
-
 
             this.setSize(1086,700);
             this.setBackground(Color.white);
@@ -256,8 +194,6 @@ public class Main
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
     }
-
-
     public static void main(String[] args)
     {
         Pagefetuado cc = new Pagefetuado();
