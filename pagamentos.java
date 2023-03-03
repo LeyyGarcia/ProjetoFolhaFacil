@@ -94,9 +94,9 @@ public class Main {
         pagamento3.setEditable(false);
 
         // definição do tamanho das caixas de texto
-        pagamento1.setPreferredSize(new Dimension(170, 255));
-        pagamento2.setPreferredSize(new Dimension(170, 255));
-        pagamento3.setPreferredSize(new Dimension(170, 255));
+        pagamento1.setPreferredSize(new Dimension(190, 255));
+        pagamento2.setPreferredSize(new Dimension(190, 255));
+        pagamento3.setPreferredSize(new Dimension(190, 255));
 
         // painel para exibir as caixas de texto lado a lado
         JPanel textos = new JPanel(new GridLayout(1, 1, 50, 1));
@@ -105,7 +105,7 @@ public class Main {
         textos.add(pagamento3);
 
         // painel para exibir os botões na parte inferior da tela
-        JPanel botoes = new JPanel(new GridLayout(1, 0, 80, 1));
+        JPanel botoes = new JPanel(new GridLayout(1, 0, 110, 1));
         botoes.add(botao1efetuarpgt);
         botoes.add(botao2efetuarpgt);
         botoes.add(botao3efetuarpgt);
@@ -121,15 +121,14 @@ public class Main {
 
         /* JLabel label = new JLabel(" Pagamento ");
         label.setPreferredSize(new Dimension(150, 100));
-
         label.setText(" Pagamento ");
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER); */
 
         // adição dos elementos ao jframe
         //jframepagamentos.add(stringv);
-        jframepagamentos.add(botaovoltar, BorderLayout.WEST);
         jframepagamentos.add(correcaotitulo);
+        jframepagamentos.add(botaovoltar, BorderLayout.WEST);
         jframepagamentos.add(textos);
         jframepagamentos.add(botoes);
         //jframepagamentos.add(label);
