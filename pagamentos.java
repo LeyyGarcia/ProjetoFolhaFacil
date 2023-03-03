@@ -1,10 +1,9 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.Border;
+import java.awt.event.*;
 
-public class Main {
-    private static void createAndShowGUI()
-    {
+public class Pagamento {
+    public void createAndShowGUI(){
         // definição das cores do fundo e do botão
         Color azulFundo = new Color(227, 235, 238);
         Color botao = new Color(94, 119, 255);
@@ -20,11 +19,6 @@ public class Main {
 
         // criação do título da página
         String titulopagina = " Pagamento ";
-        String vazia = "";
-
-        /* JTextArea stringv = new JTextArea(vazia);
-        stringv.setBackground(azulFundo);
-        stringv.setBorder(); */
 
         // definição das características e da área do jtext
         JTextArea titulopagto = new JTextArea(titulopagina);
@@ -39,9 +33,6 @@ public class Main {
         titulopagto.setSelectionColor(Color.lightGray);
         titulopagto.setSelectedTextColor(Color.darkGray);
         titulopagto.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10));
-
-        //JTextArea areat = new JTextArea();
-        //javax.swing.JTextArea
 
         // criação dos botões de pagamento
         JButton botao1efetuarpgt = new JButton("Efetuar pagamento");
@@ -75,28 +66,53 @@ public class Main {
         botao4voltar.setForeground(Color.WHITE);
         botao4voltar.setSize(600, 400);
 
+        
+        ActionListener voltar = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                janelaInicial ji = new janelaInicial();
+                ji.iniciar();
+                jframepagamentos.dispose();
+            }
+        };
+        
+        botao4voltar.addActionListener(voltar);
+        
+        Banco bank = new Banco();
+        bank.inicializarConexao();
+        String data = bank.consultarNaoPagos();
+
         // definição das caixas de texto
         JTextArea pagamento1 = new JTextArea();
         pagamento1.setForeground(Color.black);
         pagamento1.setLineWrap(true);
         pagamento1.setEditable(false);
+        pagamento1.setSize(500, 400);
+        pagamento1.setFont(new Font("Courier", Font.ITALIC, 15));
+        pagamento1.setText(data);
+
+    
 
         // definição das caixas de texto
         JTextArea pagamento2 = new JTextArea();
         pagamento2.setForeground(Color.black);
         pagamento2.setLineWrap(true);
         pagamento2.setEditable(false);
+        pagamento2.setFont(new Font("Courier", Font.ITALIC, 15));
+
 
         // definição das caixas de texto
         JTextArea pagamento3 = new JTextArea();
         pagamento3.setForeground(Color.black);
         pagamento3.setLineWrap(true);
         pagamento3.setEditable(false);
+        pagamento3.setFont(new Font("Courier", Font.ITALIC, 15));
+
 
         // definição do tamanho das caixas de texto
-        pagamento1.setPreferredSize(new Dimension(190, 255));
-        pagamento2.setPreferredSize(new Dimension(190, 255));
-        pagamento3.setPreferredSize(new Dimension(190, 255));
+        pagamento1.setPreferredSize(new Dimension(170, 255));
+        pagamento2.setPreferredSize(new Dimension(170, 255));
+        pagamento3.setPreferredSize(new Dimension(170, 255));
 
         // painel para exibir as caixas de texto lado a lado
         JPanel textos = new JPanel(new GridLayout(1, 1, 50, 1));
@@ -105,7 +121,7 @@ public class Main {
         textos.add(pagamento3);
 
         // painel para exibir os botões na parte inferior da tela
-        JPanel botoes = new JPanel(new GridLayout(1, 0, 110, 1));
+        JPanel botoes = new JPanel(new GridLayout(1, 0, 80, 1));
         botoes.add(botao1efetuarpgt);
         botoes.add(botao2efetuarpgt);
         botoes.add(botao3efetuarpgt);
@@ -114,28 +130,15 @@ public class Main {
         JPanel botaovoltar = new JPanel((new GridLayout(1, 0, 5, 0)));
         botaovoltar.add(botao4voltar);
 
-
         // painel para exibir o título da página na posição correta
         JPanel correcaotitulo = new JPanel(new GridLayout(1, 1, 1, 1));
         correcaotitulo.add(titulopagto, BorderLayout.NORTH);
 
-        /* JLabel label = new JLabel(" Pagamento ");
-        label.setPreferredSize(new Dimension(150, 100));
-        label.setText(" Pagamento ");
-        label.setHorizontalAlignment(JLabel.CENTER);
-        label.setVerticalAlignment(JLabel.CENTER); */
-
         // adição dos elementos ao jframe
-        //jframepagamentos.add(stringv);
-        jframepagamentos.add(correcaotitulo);
         jframepagamentos.add(botaovoltar, BorderLayout.WEST);
+        jframepagamentos.add(correcaotitulo);
         jframepagamentos.add(textos);
         jframepagamentos.add(botoes);
-        //jframepagamentos.add(label);
         jframepagamentos.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        createAndShowGUI();
     }
 }
