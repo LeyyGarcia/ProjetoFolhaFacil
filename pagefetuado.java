@@ -7,24 +7,45 @@ public class Main
 {
     public static class Pagefetuado extends JFrame {
 
+        //Criação de cores
         Color azulFundo = new Color(227, 235, 238);
         Color botao = new Color(94, 119, 255);
         Color fundobranco = new Color (255,255,255);
 
 
-
+        //Criação dos campos de texto e seus conteúdos
         JTextArea t1Area = new JTextArea ("Empresa FolhaFacil\n" +
+                //Os dados a baixo devem ser preenchidos com as informações do cadastro dos funcionários******
                 "Nome:_______________________"+
                 "Cargo:______________________\n"+
                 "E-mail:_____________________\n");
-        JTextArea t2Area = new JTextArea ();
-        JTextArea t3Area = new JTextArea ();
-        JTextArea t4Area = new JTextArea ();
-        JTextArea t5Area = new JTextArea ();
-        JTextArea t6Area = new JTextArea ();
-        JTextArea t7Area = new JTextArea ();
-        JTextArea t8Area = new JTextArea ();
-        JTextArea t9Area = new JTextArea ();
+        JTextArea t2Area = new JTextArea ("Descrição");
+        JTextArea t3Area = new JTextArea ("Referencia");
+        JTextArea t4Area = new JTextArea ("Vencimento");
+        JTextArea t5Area = new JTextArea ("Desconto");
+        JTextArea t6Area = new JTextArea ("\n"
+                +"Salário\n"
+                +"INSS\n"
+                +"IRFF S. Salário\n"
+                +"Calculo de hora extra\n");
+        JTextArea t7Area = new JTextArea ("\n"
+                +"30d\n"
+                +"11,00%\n"
+                +"7,50%\n"
+                +"12 horas\n");
+        //No primeiro campo insira o salario que foi designado para o funcionario e no ultimo o valor ja calculado das horas
+        //que o funcionario tem a receber
+        JTextArea t8Area = new JTextArea ("\n"
+                +"_____________"
+                +"\n"
+                +"\n"+
+                "------------");
+        //Np primeiro campo deve ser armazendado o valor do desconto do inss, e no segundo o valor do desconto do IRFF
+        JTextArea t9Area = new JTextArea ("\n"
+                +"\n"
+                +"_____________"
+                +"------------"
+                +"\n");
         JTextArea t10Area = new JTextArea ();
         JTextArea t11Area = new JTextArea ();
 
@@ -212,14 +233,14 @@ public class Main
 
 
 
-            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
             this.setSize(1086,700);
             this.setBackground(Color.white);
             this.setVisible(true);
             this.setResizable(false);
             this.setLocationRelativeTo(null);
             this.setTitle("Pagamento efetuado");
-
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
     }
 
