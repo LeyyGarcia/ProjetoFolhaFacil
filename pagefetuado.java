@@ -39,15 +39,24 @@ public class Main
                 +"_____________"
                 +"\n"
                 +"\n"+
-                "------------");
+                "______________");
         //Np primeiro campo deve ser armazendado o valor do desconto do inss, e no segundo o valor do desconto do IRFF
         JTextArea t9Area = new JTextArea ("\n"
                 +"\n"
-                +"_____________"
-                +"------------"
+                +"_____________\n"
+                +"_____________\n"
                 +"\n");
-        JTextArea t10Area = new JTextArea ();
-        JTextArea t11Area = new JTextArea ();
+        //Nesse campo, valor liquido deve ficar a quantidade de dinheiro que o funcionario vai receber , ja tendo feito todos os calculos
+        JTextArea t10Area = new JTextArea ("\n"
+                +"Vallor líquido:_________");
+
+        //Aqui deve ser inserido a soma do salario com as horas extras
+        JTextArea t11Area = new JTextArea ("\n"
+                +"Total de vencimento:_________");
+        //Aqui deve ser inserido a soma do inss e do IRFF
+        JTextArea t12Area = new JTextArea ("\n"
+                +"Total de descontos:_________");
+
 
 
         JTextArea n1Area = new JTextArea ();
@@ -141,9 +150,13 @@ public class Main
             t10Area.setBackground(azulFundo);
             t10Area.setEditable(false);
 
-            t11Area.setPreferredSize( new Dimension( 400, 50 ) );
+            t11Area.setPreferredSize( new Dimension( 200, 50 ) );
             t11Area.setBackground(azulFundo);
             t11Area.setEditable(false);
+
+            t12Area.setPreferredSize( new Dimension( 200, 50 ) );
+            t12Area.setBackground(azulFundo);
+            t12Area.setEditable(false);
 
 
             //segunda exibição
@@ -226,7 +239,7 @@ public class Main
             pag.add(t1Area);pag.add(t2Area);pag.add(t3Area);
             pag.add(t4Area);pag.add(t5Area);pag.add(t6Area);
             pag.add(t7Area);pag.add(t8Area);pag.add(t9Area);
-            pag.add(t10Area);pag.add(t11Area);pag.add(divArea);
+            pag.add(t10Area);pag.add(t11Area);pag.add(t12Area);pag.add(divArea);
             pag.add(n1Area);pag.add(n2Area);pag.add(n3Area);pag.add(n4Area);
             pag.add(n5Area);pag.add(n6Area);pag.add(n7Area);pag.add(n8Area);
             pag.add(n9Area);pag.add(n10Area);pag.add(n11Area);
