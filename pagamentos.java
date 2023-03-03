@@ -1,6 +1,5 @@
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;
 
 public class Pagamento {
     public void createAndShowGUI(){
@@ -11,7 +10,7 @@ public class Pagamento {
         // definições do Jframe
         JFrame jframepagamentos = new JFrame(" Pagamento ");
         jframepagamentos.setLayout(new FlowLayout());
-        jframepagamentos.setSize(700, 450);
+        jframepagamentos.setSize(1100, 650);
         jframepagamentos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframepagamentos.getContentPane().setBackground(azulFundo);
         jframepagamentos.setResizable(false);
@@ -22,13 +21,13 @@ public class Pagamento {
 
         // definição das características e da área do jtext
         JTextArea titulopagto = new JTextArea(titulopagina);
-        titulopagto.setPreferredSize(new Dimension(800, 500));
+        titulopagto.setPreferredSize(new Dimension(1500, 600));
         titulopagto.setForeground(botao);
         titulopagto.setEditable(false);
         titulopagto.setLineWrap(true);
         titulopagto.setWrapStyleWord(true);
         titulopagto.setBackground(azulFundo);
-        titulopagto.setPreferredSize(new Dimension(650, 50));
+        titulopagto.setPreferredSize(new Dimension(970, 50));
         titulopagto.setFont(new Font("Courier", Font.ITALIC,20));
         titulopagto.setSelectionColor(Color.lightGray);
         titulopagto.setSelectedTextColor(Color.darkGray);
@@ -66,8 +65,8 @@ public class Pagamento {
         botao4voltar.setForeground(Color.WHITE);
         botao4voltar.setSize(600, 400);
 
-        
-        ActionListener voltar = new ActionListener() {
+
+       /* ActionListener voltar = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 janelaInicial ji = new janelaInicial();
@@ -75,12 +74,14 @@ public class Pagamento {
                 jframepagamentos.dispose();
             }
         };
-        
+
         botao4voltar.addActionListener(voltar);
-        
+
         Banco bank = new Banco();
         bank.inicializarConexao();
-        String data = bank.consultarNaoPagos();
+        String data = bank.consultarNaoPagos(); */
+
+
 
         // definição das caixas de texto
         JTextArea pagamento1 = new JTextArea();
@@ -89,9 +90,16 @@ public class Pagamento {
         pagamento1.setEditable(false);
         pagamento1.setSize(500, 400);
         pagamento1.setFont(new Font("Courier", Font.ITALIC, 15));
-        pagamento1.setText(data);
+        //pagamento1.setText(data);
+        pagamento1.setText("""
+        Nome: Joao
+        Cargo: DEV
+        Email: joaomarchette@gmail.com
+        Salario: R$ 32,00
+        Data de Pagamento: 12/02/1991
+        --------------------
+        """);
 
-    
 
         // definição das caixas de texto
         JTextArea pagamento2 = new JTextArea();
@@ -110,9 +118,9 @@ public class Pagamento {
 
 
         // definição do tamanho das caixas de texto
-        pagamento1.setPreferredSize(new Dimension(170, 255));
-        pagamento2.setPreferredSize(new Dimension(170, 255));
-        pagamento3.setPreferredSize(new Dimension(170, 255));
+        pagamento1.setPreferredSize(new Dimension(300, 455));
+        pagamento2.setPreferredSize(new Dimension(300, 455));
+        pagamento3.setPreferredSize(new Dimension(300, 455));
 
         // painel para exibir as caixas de texto lado a lado
         JPanel textos = new JPanel(new GridLayout(1, 1, 50, 1));
@@ -121,13 +129,13 @@ public class Pagamento {
         textos.add(pagamento3);
 
         // painel para exibir os botões na parte inferior da tela
-        JPanel botoes = new JPanel(new GridLayout(1, 0, 80, 1));
+        JPanel botoes = new JPanel(new GridLayout(1, 0, 220, 1));
         botoes.add(botao1efetuarpgt);
         botoes.add(botao2efetuarpgt);
         botoes.add(botao3efetuarpgt);
 
         // painel para exibir o botão voltar na posição correta
-        JPanel botaovoltar = new JPanel((new GridLayout(1, 0, 5, 0)));
+        JPanel botaovoltar = new JPanel((new GridLayout(1, 1, 1, 0)));
         botaovoltar.add(botao4voltar);
 
         // painel para exibir o título da página na posição correta
@@ -135,8 +143,8 @@ public class Pagamento {
         correcaotitulo.add(titulopagto, BorderLayout.NORTH);
 
         // adição dos elementos ao jframe
-        jframepagamentos.add(botaovoltar, BorderLayout.WEST);
         jframepagamentos.add(correcaotitulo);
+        jframepagamentos.add(botaovoltar, BorderLayout.WEST);
         jframepagamentos.add(textos);
         jframepagamentos.add(botoes);
         jframepagamentos.setVisible(true);
