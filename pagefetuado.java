@@ -13,7 +13,10 @@ public class Main
 
 
 
-        JTextArea t1Area = new JTextArea ();
+        JTextArea t1Area = new JTextArea ("Empresa FolhaFacil\n" +
+                "Nome:_______________________"+
+                "Cargo:______________________\n"+
+                "E-mail:_____________________\n");
         JTextArea t2Area = new JTextArea ();
         JTextArea t3Area = new JTextArea ();
         JTextArea t4Area = new JTextArea ();
@@ -77,6 +80,7 @@ public class Main
 
             t1Area.setPreferredSize( new Dimension( 1086, 60 ) );
             t1Area.setBackground(azulFundo);
+            t1Area.setFont(new Font("Courier", Font.ITALIC,15));
             t1Area.setEditable(false);
 
             t2Area.setPreferredSize( new Dimension( 450, 20 ) );
@@ -214,6 +218,7 @@ public class Main
             this.setVisible(true);
             this.setResizable(false);
             this.setLocationRelativeTo(null);
+            this.setTitle("Pagamento efetuado");
 
         }
     }
@@ -222,6 +227,5 @@ public class Main
     public static void main(String[] args)
     {
         Pagefetuado cc = new Pagefetuado();
-        cc.setTitle("Pagamento efetuado");
     }
 }
